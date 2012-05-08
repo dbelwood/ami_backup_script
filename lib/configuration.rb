@@ -34,6 +34,10 @@ module Configuration
 	end
 
 	# Backup settings
+	def self.backup_tag
+		init unless initialized?
+		@@backup["BACKUP_TAG"]
+	end
 
 
 	# Sync settings
@@ -53,6 +57,7 @@ module Configuration
 
 	def self.init(verbose=false)
 		@@aws = YAML.load File.read(File.join(File.dirname(__FILE__), '../conf/aws.yml'))
+		@@backup = YAML.load File.read(File.join(File.dirname(__FILE__), '../conf/backup.yml'))
 		@@images = YAML.load File.read(File.join(File.dirname(__FILE__), '../conf/images.yml'))
 		@@sync_settings = YAML.load File.read(File.join(File.dirname(__FILE__), '../conf/sync.yml'))
 		@@defaults = YAML.load File.read(File.join(File.dirname(__FILE__), '../conf/defaults.yml'))
