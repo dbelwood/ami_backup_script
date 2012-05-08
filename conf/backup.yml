@@ -1,6 +1,1 @@
-AWS_ACCESS_KEY:			AKIAJSLPHYHDBYTTRQWA
-AWS_SECRET_ACCESS_KEY: 	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
 BACKUP_TAG:            	backup-count
-LOG_FILE:             	backup.log
-SOURCE_REGION:	        us-east-1
-TARGET_REGIONS:         [us-west-2]
