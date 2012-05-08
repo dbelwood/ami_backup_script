@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# Description:  Provision EBS-backed instance in another region based on instance-id
+# Author:       Dan Belwood <dbelwood@modelmetrics.com>
+# Example: provision -instance-id <instance-id> -source-region <source-region> -target-region <target-region> -target-az <avalability-zone> -os <os>
+
+require 'rubygems'
+require 'bundler/setup'
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '../lib')
+require 'provision'
+
+Provision.run! ARGV

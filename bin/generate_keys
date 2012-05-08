@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# Description:  Generate key files for sync
+# Author:       Dan Belwood <dbelwood@modelmetrics.com>
+
+require 'rubygems'
+require 'bundler/setup'
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '../lib')
+require 'keys'
+
+Keys.run! ARGV

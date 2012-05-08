@@ -1,0 +1,3 @@
+KEY_NAME: "aws_tools_sync"
+whitelist_directories:
+  - '/home/'

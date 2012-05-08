@@ -1,0 +1,31 @@
+# Logfile created on 2012-04-06 14:05:04 -0500 by logger.rb/31641
+I, [2012-04-06T14:05:04.614508 #94586]  INFO -- : New RightAws::Ec2 using dedicated connections mode
+I, [2012-04-06T14:05:04.615176 #94586]  INFO -- : Opening new HTTPS connection to ec2.amazonaws.com:443
+I, [2012-04-06T14:28:06.582142 #99346]  INFO -- : New RightAws::Ec2 using dedicated connections mode
+I, [2012-04-06T14:28:06.582748 #99346]  INFO -- : Opening new HTTPS connection to ec2.amazonaws.com:443
+I, [2012-04-06T14:47:10.753667 #7607]  INFO -- : AMI Testing Instance/2012-04-06 created successfuly. ID: aki-12345.
+I, [2012-04-06T14:47:10.753761 #7607]  INFO -- : AMI aki-12345 tagged with backup-of i-e7925980 and backup-epoch of 1333741630
+I, [2012-04-06T14:47:39.393247 #7973]  INFO -- : AMI Testing Instance/2012-04-06 created successfuly. ID: aki-12345.
+I, [2012-04-06T14:47:39.393394 #7973]  INFO -- : AMI aki-12345 tagged with backup-of i-e7925980 and backup-epoch of 1333741659
+I, [2012-04-06T14:47:39.393489 #7973]  INFO -- : AMI  deregistered. ID: aki-00806363.
+I, [2012-04-06T14:51:24.413060 #9524]  INFO -- : AMI Testing Instance/2012-04-06 created successfuly. ID: aki-12345.
+I, [2012-04-06T14:51:24.413197 #9524]  INFO -- : AMI aki-12345 tagged with backup-of i-e7925980 and backup-epoch of 1333741884
+I, [2012-04-06T14:51:24.413312 #9524]  INFO -- : AMI  deregistered. ID: aki-00806363.
+I, [2012-04-06T14:57:55.348823 #12396]  INFO -- : AMI Testing Instance/2012-04-06 created successfuly. ID: aki-12345.
+I, [2012-04-06T14:57:55.348929 #12396]  INFO -- : AMI aki-12345 tagged with backup-of i-e7925980 and backup-epoch of 1333742275
+I, [2012-04-06T14:57:55.349012 #12396]  INFO -- : AMI  deregistered. ID: aki-00806363.
+I, [2012-04-06T14:59:17.637409 #12849]  INFO -- : AMI Testing Instance/2012-04-06 created successfuly. ID: aki-12345.
+I, [2012-04-06T14:59:17.637505 #12849]  INFO -- : AMI aki-12345 tagged with backup-of i-e7925980 and backup-epoch of 1333742357
+I, [2012-04-06T14:59:17.637577 #12849]  INFO -- : AMI  deregistered. ID: aki-00806363.
+I, [2012-04-06T14:59:17.637641 #12849]  INFO -- : Snapshot {:ebs_snapshot_id=>"snap-829a20eb", :ebs_delete_on_termination=>true, :device_name=>"/dev/sda1"} removed.
+I, [2012-04-06T14:59:17.637680 #12849]  INFO -- : AMI  deregistered. ID: aki-00806364.
+I, [2012-04-06T14:59:17.637723 #12849]  INFO -- : Snapshot {:ebs_snapshot_id=>"snap-829a20eb", :ebs_delete_on_termination=>true, :device_name=>"/dev/sda1"} removed.
+I, [2012-04-06T14:59:17.637760 #12849]  INFO -- : AMI  deregistered. ID: aki-00806365.
+I, [2012-04-06T14:59:17.637800 #12849]  INFO -- : Snapshot {:ebs_snapshot_id=>"snap-829a20eb", :ebs_delete_on_termination=>true, :device_name=>"/dev/sda1"} removed.
+I, [2012-04-06T14:59:17.637840 #12849]  INFO -- : AMI  deregistered. ID: aki-00806366.
+I, [2012-04-06T14:59:17.637881 #12849]  INFO -- : Snapshot {:ebs_snapshot_id=>"snap-829a20eb", :ebs_delete_on_termination=>true, :device_name=>"/dev/sda1"} removed.
+I, [2012-04-06T14:59:17.637918 #12849]  INFO -- : AMI  deregistered. ID: aki-00806367.
+I, [2012-04-06T14:59:17.637959 #12849]  INFO -- : Snapshot {:ebs_snapshot_id=>"snap-829a20eb", :ebs_delete_on_termination=>true, :device_name=>"/dev/sda1"} removed.
+I, [2012-04-06T14:59:17.637995 #12849]  INFO -- : AMI  deregistered. ID: aki-00806368.
+I, [2012-04-06T14:59:17.638039 #12849]  INFO -- : Snapshot {:ebs_snapshot_id=>"snap-829a20eb", :ebs_delete_on_termination=>true, :device_name=>"/dev/sda1"} removed.
+I, [2012-04-06T14:59:17.638071 #12849]  INFO -- : AMI image aki-12345 migrated to us-west-2

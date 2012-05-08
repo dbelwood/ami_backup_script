@@ -1,0 +1,30 @@
+us-east-1:
+  amazon:
+    i386: 'ami-ed65ba84'
+    x86_64: 'ami-e565ba8c'
+  ubuntu:
+    i386: ''
+    x86_64: ''
+  centos:
+    i386: ''
+    x86_64: ''
+us-west-1:
+  amazon:
+    i386: 'ami-978cd4d2'
+    x86_64: 'ami-e78cd4a2'
+  ubuntu:
+    i386: ''
+    x86_64: ''
+  centos:
+    i386: ''
+    x86_64: ''
+us-west-2:
+  amazon:
+    i386: 'ami-38c64a08'
+    x86_64: 'ami-3ac64a0a'
+  ubuntu:
+    i386: ''
+    x86_64: ''
+  centos:
+    i386: ''
+    x86_64: ''
