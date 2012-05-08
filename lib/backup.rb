@@ -14,7 +14,7 @@ class Backup
 			    case argument
 			      when "--help"
 			      	usage
-			      when "--region"
+			      when /--region=(.*)/
 			      	region = argument.sub('--region=', '')
 			      else 
 			      	puts "Unknown argument #{argument}. Use '--help'."
@@ -22,6 +22,8 @@ class Backup
 			    end
 			  end
 			end
+
+			puts "insufficient args" if region.nil?
 
 			# Create images
 			create_images region
@@ -41,12 +43,12 @@ class Backup
 	  exit 0
 	end
 
-	def self.create_images
+	def self.create_images region
 		# Create EC2 connections
 		conn = Connection::get_connection region
 		instances_to_sync = []
 		begin
-			conn.describe_instances(:filters => {'tag-key' => @@backup_tag}).each do |instance|
+			conn.describe_instances(:filters => {'tag-key' => Configuration::backup_tag}).each do |instance|
 				begin
 					ami_id = create_image conn, instance
 					clean_up_images conn, instance
@@ -72,7 +74,7 @@ class Backup
 	    ami_name = instance_name + '/' + current_date + "-" + epoch_time
 
 		# Generate new AMI description
-	    ami_description = @@backup_tag + '; '
+	    ami_description = Configuration::backup_tag + '; '
 	    ami_description += 'AZ:'     + instance[:aws_availability_zone] + '; '
 	    ami_description += 'TYPE:'   + instance[:aws_instance_type] + '; '
 
@@ -95,20 +97,19 @@ class Backup
 	end
 
 	def self.clean_up_images(ec2, instance)
-		backup_count = instance[:tags][@@backup_tag].to_i
+		backup_count = instance[:tags][Configuration::backup_tag].to_i
 		begin
 			images = ec2.describe_images(:filters => {'tag:backup-of' => instance[:aws_instance_id]})
-			images.sort{|x,y| x[:tags]['backup-epoch'] <=> y[:tags]['backup-epoch']}
+			images.sort!{|x,y| x[:tags]['backup-epoch'] <=> y[:tags]['backup-epoch']}
 			if images.size > backup_count
 				images.slice!(0, images.size - backup_count).each do |image|
 					begin
-						remove_image(image) 
+						remove_image(ec2, image) 
 					rescue RightAws::AwsError => e
 						Configuration::logger.error "Error removing image - " + e.message
 					end		
 				end
 			end
-			images_to_migrate << ami_id
 		rescue RightAws::AwsError => e
 			Configuration::logger.error "Error describing images - " + e.message
 		end	
