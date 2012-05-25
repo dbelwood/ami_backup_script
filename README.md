@@ -17,7 +17,7 @@ Generate shared key and install in provided regions. Run only once.  ***All opti
 ./bin/generate_keys --regions=<comma separated list of aws regions>
 ```
 
-#sync
+#sync - Currently Unfinishedc
 Synchronize changes from one instance in source_region to target_region via rsync.  ***All options are required***
 ```bash
 ./bin/sync --instance_id=<instance_id> --source_region=<source_region> --target_region=<target_region>
